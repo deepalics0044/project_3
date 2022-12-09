@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Autodesk Forge Tutorial</title>
+    <meta charset="utf-8" />
+    <link
+      rel="shortcut icon"
+      href="https://github.com/Autodesk-Forge/learn.forge.viewmodels/raw/master/img/favicon.ico"
+    />
+    <!-- Common packages: jQuery, Bootstrap, jsTree -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/jstree.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/themes/default/style.min.css"
+    />
+    <!-- Autodesk Forge Viewer files -->
+    <link
+      rel="stylesheet"
+      href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.min.css"
+      type="text/css"
+    />
+    <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.min.js"></script>
+    <!-- this project files -->
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="js/ForgeTree.js"></script>
+    <script src="js/ForgeViewer.js"></script>
+    <script src="js/admin.js"></script>
+
+    <script src="/js/myawesomeextension.js"></script>
+    <script src="/js/handleselectionextension.js"></script>
+    <script src="/js/modelsummaryextension.js"></script>
+  </head>
+
+  <body>
+    <!-- Fixed navbar by Bootstrap: https://getbootstrap.com/examples/navbar-fixed-top/ -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav left">
+          <li>
+            <a href="http://developer.autodesk.com" target="_blank">
+              <img
+                alt="Autodesk Forge"
+                src="//developer.static.autodesk.com/images/logo_forge-2-line.png"
+                height="20"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End of navbar -->
+    <style>
+      table {
+        align: center;
+      }
+      td,
+      th {
+        padding: 10px;
+      }
+      th:empty {
+      }
+    </style>
+
+    <table align="center">
+      <tr></tr>
+      <tr>
+        <td>Door 1 - 2448</td>
+        <td>
+          <input type="checkbox" id="closed1" onclick="myFunction()" />
+          Closed
+        </td>
+        <td>
+          <input type="checkbox" id="locked1" onclick="myFunction()" />
+          Locked
+        </td>
+      </tr>
+      <tr>
+        <td>Door 2 - 2447</td>
+        <td>
+          <input <input type="checkbox" id="closed2" onclick="myFunction()" />
+          Closed
+        </td>
+        <td>
+          <input type="checkbox" id="locked2" onclick="myFunction()" />Locked
+        </td>
+      </tr>
+      <tr>
+        <td>Door 3 - 2442</td>
+        <td>
+          <input <input type="checkbox" id="closed3" onclick="myFunction()" />
+          Closed
+        </td>
+        <td>
+          <input type="checkbox" id="locked3" onclick="myFunction()" />Locked
+        </td>
+      </tr>
+      <tr>
+        <td>Door 4- 2470</td>
+        <td>
+          <input <input type="checkbox" id="closed4" onclick="myFunction()" />
+          Closed
+        </td>
+        <td>
+          <input type="checkbox" id="locked4" onclick="myFunction()" />Locked
+        </td>
+      </tr>
+    </table>
+  </br>
+    <button onclick="myFunction1()" style="display: block; margin: 0 auto">
+      Update
+    </button>
+  </body>
+</html>

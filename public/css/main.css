@@ -1,15 +1,16 @@
-﻿html, body{
+﻿html,
+body {
   min-height: 100%;
   height: 100%;
 }
 
-.fill{
+.fill {
   height: calc(100vh - 100px);
 }
 
 body {
   padding-top: 60px; /* space for the top nav bar */
-  /* margin-right: 30px; */
+  margin-right: 30px;
 }
 
 #appBuckets {
@@ -22,10 +23,111 @@ body {
   width: 100%;
 }
 
-.nopadding{padding: 0;}
+.myAwesomeExtensionIcon {
+  background-image: url(/img/myAwesomeIcon.png);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-.pl{padding-left: 10px;}
+.handleSelectionExtensionIcon {
+  background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/object-group.png);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.modelSummaryExtensionIcon {
+  background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/dashboard.png);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#dashboard {
+  overflow: auto;
+  height: calc(100vh - 100px);
+}
 
-.left_panel{padding: 0 10px;}
+.transition-width {
+  transition: width 1s ease-in-out;
+}
 
-.right_panel{padding: 0 10px;}
+.dashboardPanel {
+  width: 100%;
+  padding: 3%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+}
+td,
+th {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+th:empty {
+  border: 0;
+}
+.box {
+  height: 20px;
+  width: 20px;
+
+  border: 1px solid black;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+#layout {
+  width: 100%;
+  height: calc(100vh);
+}
+
+#sidebar {
+  size: 35px;
+}
+
+label.markup {
+  position: absolute;
+  white-space: nowrap;
+  cursor: pointer;
+  color: black;
+}
+
+label.update {
+  z-index: 1;
+}
+
+.temperatureBorder {
+  background-color: rgba(256, 256, 256, 0.5);
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.temperatureHigh {
+  font-size: 25px;
+  color: red;
+}
+
+.temperatureOk {
+  font-size: 20px;
+  color: blue;
+}
+
+.temperatureYellow {
+  font-size: 30px;
+  color: yellow;
+}
+
+.maintenance {
+  font-size: 40px;
+  color: green;
+}
