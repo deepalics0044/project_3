@@ -53,7 +53,7 @@ function launchViewer(urn) {
 
 function onDocumentLoadSuccess(doc) {
   var viewables = doc.getRoot().getDefaultGeometry();
-  var door_locked = [];
+
   viewer.loadDocumentNode(doc, viewables).then((i) => {
     viewer.addEventListener(
       Autodesk.Viewing.SELECTION_CHANGED_EVENT,
@@ -63,6 +63,7 @@ function onDocumentLoadSuccess(doc) {
         if (!resp.ok) {
           throw new Error(await resp.text());
         }
+        var door_locked = [];
         let data1 = await resp.json();
 
         var red = new THREE.Vector4(1, 0, 0, 1);
@@ -87,45 +88,44 @@ function onDocumentLoadSuccess(doc) {
             viewer.setThemingColor(e.dbid, red);
           }
         });
+        viewer.loadExtension("IconMarkupExtension", {
+          button: {
+            icon: "fa-door-closed",
+            tooltip: "Show locked door",
+          },
+          icons: [
+            {
+              dbId: door_locked[0],
+              label: "Locked1",
+              css: "fas fa-solid fa-lock",
+            },
+            {
+              dbId: door_locked[1],
+              label: "Locked2",
+              css: "fas fa-solid fa-lock",
+            },
+            {
+              dbId: door_locked[2],
+              label: "Locked3",
+              css: "fas fa-solid fa-lock",
+            },
+            {
+              dbId: door_locked[3],
+              label: "Locked4",
+              css: "fas fa-solid fa-lock",
+            },
+          ],
+          onClick: (id) => {
+            viewers.select(id);
+            viewers.utilities.fitToView();
+            switch (id) {
+              case 563:
+                alert("Sensor offline");
+            }
+          },
+        });
       }
     );
-
-    viewer.loadExtension("IconMarkupExtension", {
-      button: {
-        icon: "fa-door-closed",
-        tooltip: "Show locked door",
-      },
-      icons: [
-        {
-          dbId: door_locked[0],
-          label: "Locked",
-          css: "fas fa-solid fa-lock",
-        },
-        {
-          dbId: door_locked[1],
-          label: "Locked",
-          css: "fas fa-solid fa-lock",
-        },
-        {
-          dbId: door_locked[2],
-          label: "Locked",
-          css: "fas fa-solid fa-lock",
-        },
-        {
-          dbId: door_locked[3],
-          label: "Locked",
-          css: "fas fa-solid fa-lock",
-        },
-      ],
-      onClick: (id) => {
-        viewers.select(id);
-        viewers.utilities.fitToView();
-        switch (id) {
-          case 563:
-            alert("Sensor offline");
-        }
-      },
-    });
   });
 }
 
