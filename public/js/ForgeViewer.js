@@ -78,14 +78,14 @@ function onDocumentLoadSuccess(doc) {
 
         data1.forEach((e) => {
           if (e.closed == true && e.locked == false) {
-            viewer.setThemingColor(e.dbid, red);
+            viewer.setThemingColor(e.dbid, green);
           } else if (e.closed == false && e.locked == true) {
             door_locked.push(e.dbid);
-            viewer.setThemingColor(e.dbid, green);
-          } else if (e.closed == false && e.locked == false) {
-            viewer.setThemingColor(e.dbid, green);
-          } else {
             viewer.setThemingColor(e.dbid, red);
+          } else if (e.closed == false && e.locked == false) {
+            viewer.setThemingColor(e.dbid, red);
+          } else {
+            viewer.setThemingColor(e.dbid, green);
           }
         });
         viewer.loadExtension("IconMarkupExtension", {
